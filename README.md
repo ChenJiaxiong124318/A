@@ -30,17 +30,13 @@
 NotePadProvider中的insert方法
 
       Long now = Long.valueOf(System.currentTimeMillis());
-      //修改 需要将毫秒数转换为时间的形式yy.MM.dd HH:mm:ss
       Date date = new Date(now);
       SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
      String dateFormat = simpleDateFormat.format(date);//转换为yy.MM.dd HH:mm:ss形式的时间
-    // If the values map doesn't contain the creation date, sets the value to the current time.
     if (values.containsKey(NotePad.Notes.COLUMN_NAME_CREATE_DATE) == false) {
     values.put(NotePad.Notes.COLUMN_NAME_CREATE_DATE, dateFormat);
     }
 
-    // If the values map doesn't contain the modification date, sets the value to the current
-    // time.
     if (values.containsKey(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE) == false) {
     values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateFormat);
     }
@@ -75,8 +71,8 @@ NoteList的修改
 
 加入修改时间后:
 
-     String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE }//加入修改时间;
-    int[] viewIDs = { android.R.id.text1, R.id.text2 }//加入修改时间;
+     String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE };
+    int[] viewIDs = { android.R.id.text1, R.id.text2 };
 添加笔记查询图标
 在函数onCreateOptionMenu（Menu menu)
 

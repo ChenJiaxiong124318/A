@@ -28,7 +28,7 @@
 修改时间戳类型
 新建笔记在NotePadProvider中的insert方法，修改笔记在NoteEditor中的updateNote方法，我们需要修改这个方法中的时间戳格式
 NotePadProvider中的insert方法
-        
+
       Long now = Long.valueOf(System.currentTimeMillis());
       //修改 需要将毫秒数转换为时间的形式yy.MM.dd HH:mm:ss
       Date date = new Date(now);
@@ -44,6 +44,7 @@ NotePadProvider中的insert方法
     if (values.containsKey(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE) == false) {
     values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateFormat);
     }
+NoteEditor中的updateNote方法:
 
     long now = System.currentTimeMillis();
     Date date = new Date(now);
